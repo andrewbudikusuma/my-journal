@@ -2,9 +2,18 @@
 import * as React from 'react'
 import Layout from "../components/layout"
 import LandingBio from "../components/landing-bio";
+import {HeadFC} from "gatsby"
+import {SEO} from "../components/seo"
 
+type QueryReturn = {
+  allPark: {
+    nodes: {
+      name: string;
+      gatsbyPath: string
+    }[]
+  }
+}
 
-// Step 2: Define your component
 const IndexPage = () => {
   return (
     <Layout>
@@ -13,8 +22,10 @@ const IndexPage = () => {
   )
 }
 
-// You'll learn about this in the next task, just copy it for now
-export const Head = () => <title>Home Page</title>
+export const Head: HeadFC<QueryReturn> = () => (
+  <SEO title="Home">
+    <script type="application/ld+json">{JSON.stringify({})}</script>
+  </SEO>
+)
 
-// Step 3: Export your component
 export default IndexPage

@@ -1,49 +1,44 @@
-import * as React from "react"
-import { Link, HeadFC, PageProps } from "gatsby"
+import React from "react"
+import Layout from "../components/layout"
+import styled from "@emotion/styled"
+import tw from 'twin.macro';
+import {HeadFC} from "gatsby";
+import {SEO} from "../components/seo";
 
-const pageStyles = {
-  color: "#232129",
-  padding: "96px",
-  fontFamily: "-apple-system, Roboto, sans-serif, serif",
-}
-const headingStyles = {
-  marginTop: 0,
-  marginBottom: 64,
-  maxWidth: 320,
-}
-
-const paragraphStyles = {
-  marginBottom: 48,
-}
-const codeStyles = {
-  color: "#8A6534",
-  padding: 4,
-  backgroundColor: "#FFF4DB",
-  fontSize: "1.25rem",
-  borderRadius: 4,
+type QueryReturn = {
+  allPark: {
+    nodes: {
+      name: string;
+      gatsbyPath: string
+    }[]
+  }
 }
 
-const NotFoundPage: React.FC<PageProps> = () => {
-  return (
-    <main style={pageStyles}>
-      <h1 style={headingStyles}>Page not found</h1>
-      <p style={paragraphStyles}>
-        Sorry 😔, we couldn’t find what you were looking for.
-        <br />
-        {process.env.NODE_ENV === "development" ? (
-          <>
-            <br />
-            Try creating a page in <code style={codeStyles}>src/pages/</code>.
-            <br />
-          </>
-        ) : null}
-        <br />
-        <Link to="/">Go home</Link>.
-      </p>
-    </main>
-  )
-}
+const Container = styled.div`
+  ${tw`text-center`};
+`
+
+const OuterContainer = styled.div`
+  ${tw`flex items-center justify-center flex-row `}
+  height: 78vh;
+`
+
+const Page404Title = styled.h1`
+  ${tw`text-5xl mb-0`}
+`
+const NotFoundPage = () => <Layout>
+  <OuterContainer>
+    <Container>
+      <Page404Title>404: Not Found</Page404Title>
+    </Container>
+  </OuterContainer>
+</Layout>
+
+export const Head: HeadFC<QueryReturn> = () => (
+  <SEO title="Home">
+    <script type="application/ld+json">{JSON.stringify({})}</script>
+  </SEO>
+)
+
 
 export default NotFoundPage
-
-export const Head: HeadFC = () => <title>Not found</title>

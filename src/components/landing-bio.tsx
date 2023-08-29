@@ -1,7 +1,7 @@
 import React from "react"
-import {useStaticQuery, graphql} from "gatsby"
 import styled from "@emotion/styled"
 import tw from 'twin.macro';
+import {useSiteMetadata} from "../hooks/use-site-metadata"
 
 const Container = styled.div`
   ${tw`text-center`};
@@ -17,27 +17,17 @@ const Description = styled.p`
 `
 
 const NameHeader = styled.h1`
-  ${tw`text-6xl mb-0`}
+  ${tw`text-5xl mb-0`}
 `
 
 const LandingBio = () => {
-
-  const data = useStaticQuery(graphql`
-    query LandingSiteTitleQuery {
-      site {
-        siteMetadata {
-          title,
-          subtitle
-        }
-      }
-    }
-  `)
+  const {title, subtitle} = useSiteMetadata()
 
   return (
     <OuterContainer>
       <Container>
-        <NameHeader>{data.site?.siteMetadata.title}</NameHeader>
-        <Description>{data.site.siteMetadata.subtitle}</Description>
+        <NameHeader>{title}</NameHeader>
+        <Description>{subtitle}</Description>
       </Container>
     </OuterContainer>
   )
