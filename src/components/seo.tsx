@@ -24,14 +24,23 @@ export const SEO: React.FC<React.PropsWithChildren<SEOProps>> = ({title, descrip
       <title>{seo.title}</title>
       <meta name="description" content={seo.description}/>
       <meta name="image" content={seo.image}/>
+      {/* Facebook Meta Tags*/}
+      <meta property="og:url" content={seo.url}/>
+      <meta property="og:type" content="website"/>
+      <meta property="og:title" content={seo.title}/>
+      <meta property="og:description" content={seo.description}/>
+      <meta property="og:image" content={seo.image}/>
+      {/* Twitter Meta Tags*/}
       <meta name="twitter:card" content="summary_large_image"/>
-      <meta name="twitter:title" content={seo.title}/>
       <meta name="twitter:url" content={seo.url}/>
+      <meta name="twitter:title" content={seo.title}/>
       <meta name="twitter:description" content={seo.description}/>
       <meta name="twitter:image" content={seo.image}/>
       <meta name="twitter:creator" content={seo.twitterUsername}/>
-      <link id="favicon-icon" rel="icon"
-            href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>👤</text></svg>"/>
+      <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"/>
+      <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"/>
+      <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"/>
+      <link rel="manifest" href="/site.webmanifest"/>
       {children}
     </>
   )

@@ -1,8 +1,8 @@
 import React from "react"
-import Layout from "../components/layout"
+import {HeadFC} from "gatsby";
 import styled from "@emotion/styled"
 import tw from 'twin.macro';
-import {HeadFC} from "gatsby";
+import Layout from "../components/layout"
 import {SEO} from "../components/seo";
 
 type QueryReturn = {
@@ -35,9 +35,7 @@ const NotFoundPage = () => <Layout>
 </Layout>
 
 export const Head: HeadFC<QueryReturn> = () => (
-  <SEO title="Home">
-    <script type="application/ld+json">{JSON.stringify({})}</script>
-  </SEO>
+  <SEO/>
 )
 
 

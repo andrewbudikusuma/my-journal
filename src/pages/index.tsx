@@ -1,8 +1,7 @@
-// Step 1: Import React
-import * as React from 'react'
+import React from 'react'
+import {HeadFC} from "gatsby"
 import Layout from "../components/layout"
 import LandingBio from "../components/landing-bio";
-import {HeadFC} from "gatsby"
 import {SEO} from "../components/seo"
 
 type QueryReturn = {
@@ -23,9 +22,7 @@ const IndexPage = () => {
 }
 
 export const Head: HeadFC<QueryReturn> = () => (
-  <SEO title="Home">
-    <script type="application/ld+json">{JSON.stringify({})}</script>
-  </SEO>
+  <SEO title="Home"/>
 )
 
 export default IndexPage

@@ -6,9 +6,9 @@ const config: GatsbyConfig = {
     subtitle: `software engineer, full-stack developer, and a human being`,
     description: `Andrew Budikusuma's personal website`,
     author: `@andrewbudikusuma`,
-    twitterUsername: `@andrewbudikusuma`,
+    twitterUsername: `@andrewbkusuma`,
     siteUrl: `https://www.andrewbudikusuma.com`,
-    image: `/blog.png`,
+    image: `/notion-og-image.png`,
   },
   // More easily incorporate content into your pages through automatic TypeScript type generation and better GraphQL IntelliSense.
   // If you use VSCode you can also use the GraphQL plugin
