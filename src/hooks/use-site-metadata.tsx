@@ -6,7 +6,6 @@ type ReturnValue = {
       title: string
       description: string
       twitterUsername: string
-      image: string
       siteUrl: string
       subtitle: string
     }
@@ -21,7 +20,6 @@ export const useSiteMetadata = () => {
           title
           description
           twitterUsername
-          image
           siteUrl
           subtitle
         }

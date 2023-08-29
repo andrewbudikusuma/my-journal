@@ -8,12 +8,16 @@ type SEOProps = {
 }
 
 export const SEO: React.FC<React.PropsWithChildren<SEOProps>> = ({title, description, pathname, children}) => {
-  const {title: defaultTitle, description: defaultDescription, image, siteUrl, twitterUsername} = useSiteMetadata()
+  const {
+    title: defaultTitle,
+    description: defaultDescription,
+    siteUrl,
+    twitterUsername
+  } = useSiteMetadata()
 
   const seo = {
     title: title ? `${title} | ${defaultTitle}` : defaultTitle,
     description: description || defaultDescription,
-    image: `${siteUrl}${image}`,
     url: `${siteUrl}${pathname || ``}`,
     twitterUsername,
   }
@@ -23,19 +27,16 @@ export const SEO: React.FC<React.PropsWithChildren<SEOProps>> = ({title, descrip
       <html lang="en-US"/>
       <title>{seo.title}</title>
       <meta name="description" content={seo.description}/>
-      <meta name="image" content={seo.image}/>
       {/* Facebook Meta Tags*/}
       <meta property="og:url" content={seo.url}/>
       <meta property="og:type" content="website"/>
       <meta property="og:title" content={seo.title}/>
       <meta property="og:description" content={seo.description}/>
-      <meta property="og:image" content={seo.image}/>
       {/* Twitter Meta Tags*/}
       <meta name="twitter:card" content="summary_large_image"/>
       <meta name="twitter:url" content={seo.url}/>
       <meta name="twitter:title" content={seo.title}/>
       <meta name="twitter:description" content={seo.description}/>
-      <meta name="twitter:image" content={seo.image}/>
       <meta name="twitter:creator" content={seo.twitterUsername}/>
       <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"/>
       <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"/>
