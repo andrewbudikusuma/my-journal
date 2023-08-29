@@ -116,5 +116,10 @@
     "./gatsby-node.ts",
     "./gatsby-config.ts",
     "./plugins/**/*"
+  ],
+  "exclude": [
+    "node_modules",
+    "public",
+    ".cache"
   ]
 }
