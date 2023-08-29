@@ -5,3 +5,4 @@ src/gatsby-types.d.ts
 
 # local webstorm config
 .idea/
+.DS_Store
