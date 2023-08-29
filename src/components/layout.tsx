@@ -1,5 +1,4 @@
 import React, {ReactNode} from "react"
-import {useStaticQuery, StaticQuery, graphql} from "gatsby"
 import styled from '@emotion/styled';
 import tw, {GlobalStyles} from 'twin.macro';
 
@@ -24,15 +23,6 @@ const GatsbyLink = styled.a`
 `
 
 const Layout: React.FC<LayoutProps> = ({children}) => {
-  const data = useStaticQuery(graphql`
-    query {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `)
   return (
     <div>
       <GlobalStyles/>
